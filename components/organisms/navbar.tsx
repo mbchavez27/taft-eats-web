@@ -8,7 +8,7 @@ export default function NavBar() {
   const [isAuthendicated, setAuthentication] = useState(false);
   return (
     <>
-      <nav className="bg-[#FFFFFF] flex items-center justify-between px-16 py-2">
+      <nav className="bg-[#FFFFFF] flex items-center justify-between px-4 md:px-12 lg:px-16 md:py-2">
         <section>
           <div className="flex items-center gap-1">
             <img
@@ -17,13 +17,13 @@ export default function NavBar() {
               width={75}
               height={75}
             />
-            <div className="font-climate text-[#326F33] text-xl">
+            <div className="hidden md:inline font-climate text-[#326F33] text-xl">
               <h1>TAFT</h1>
               <h1>EATS</h1>
             </div>
           </div>
         </section>
-        <section className="font-inter text-lg flex items-center gap-12">
+        <section className="hidden lg:flex font-inter text-lg items-center gap-12">
           <div className="flex items-center">
             <SearchField />
           </div>
@@ -42,7 +42,7 @@ export default function NavBar() {
               </>
             ) : (
               <>
-                <div className="font-medium flex gap-5">
+                <div className="font-medium flex ml-4 gap-5">
                   <button className="bg-white text-black border border-black px-4 py-1 rounded-lg">
                     Log In
                   </button>
