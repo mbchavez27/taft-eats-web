@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
-@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -134,25 +133,5 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer utilities {
-  /* Left scrollbar */
-  .scroll-left {
-    direction: rtl; /* moves scrollbar to left */
-  }
-  .scroll-left > * {
-    direction: ltr; /* content stays normal */
-  }
-  .scroll-left::-webkit-scrollbar {
-    width: 8px;
-  }
-  .scroll-left::-webkit-scrollbar-thumb {
-    background-color: #ffd24d;
-    border-radius: 4px;
-  }
-  .scroll-left::-webkit-scrollbar-track {
-    background: transparent;
   }
 }
