@@ -1,4 +1,5 @@
 import SelectCuisines from "../components/select-cusines";
+import SelectTags from "../components/select-tags";
 
 export default function FilterMenu() {
   return (
@@ -6,7 +7,7 @@ export default function FilterMenu() {
       <main className="bg-[#FFFF] border-t-36 rounded-xl border-[#FFBF00] w-xs font-lexend text-[#326F33] py-2">
         <SelectCuisines />
         <hr className="border border-gray" />
-        <SelectCuisines />
+        <SelectTags />
       </main>
     </>
   );
