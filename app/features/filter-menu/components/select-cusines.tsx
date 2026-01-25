@@ -1,16 +1,16 @@
-import { ScrollArea } from "~/components/ui/scroll-area";
-import { Checkbox } from "~/components/ui/checkbox";
-import { cuisines } from "../data/dummy_cusine";
+import { ScrollArea } from '~/components/ui/scroll-area'
+import { Checkbox } from '~/components/ui/checkbox'
+import { cuisines } from '../data/dummy_cusine'
 
 export default function SelectCuisines() {
   return (
     <>
-      <section className="flex flex-col gap-2 px-8 py-2">
+      <section className="flex flex-col gap-2 px-8 py-4 pb-6">
         <div>
           <h1 className="font-bold text-2xl">Cuisines</h1>
         </div>
         <div className="text-[#BEBEBE] text-sm px-3">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <Checkbox
               id="cuisine-all"
               className="
@@ -27,7 +27,7 @@ export default function SelectCuisines() {
           </div>
 
           <div className="font-inter text-[#326F33] font-semibold">
-            <ScrollArea className="px-4 py-2 text-lg flex flex-col gap-2 h-32 scroll-left">
+            <ScrollArea className="px-4 py-2 text-lg flex flex-col gap-6 h-32 scroll-left">
               {cuisines.map((cuisine) => (
                 <div key={cuisine.id} className="flex gap-2 items-center">
                   <Checkbox
@@ -50,5 +50,5 @@ export default function SelectCuisines() {
         </div>
       </section>
     </>
-  );
+  )
 }

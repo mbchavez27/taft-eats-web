@@ -1,13 +1,13 @@
-import FilterMenu from "~/features/filter-menu/containers/filter-menu";
+import FilterMenu from '~/features/filter-menu/containers/filter-menu'
 
 export default function RestaurantView() {
   return (
     <>
       <main>
-        <div className="py-12 px-12">
+        <div className="py-12 px-16">
           <FilterMenu />
         </div>
       </main>
     </>
-  );
+  )
 }
