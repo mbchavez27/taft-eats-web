@@ -4,7 +4,7 @@ export default function RestaurantView() {
   return (
     <>
       <main>
-        <div className="py-12 px-16">
+        <div className="py-12 px-16 hidden lg:flex">
           <FilterMenu />
         </div>
       </main>
