@@ -14,7 +14,7 @@ export default function RestaurantView() {
         <div className="py-12 px-12 hidden lg:flex">
           <FilterMenu />
         </div>
-        <div className="flex flex-col gap-12 py-12 px-10">
+        <div className="flex flex-col gap-8 py-12 px-10">
           <FoodFilter />
           <Establishments />
         </div>
