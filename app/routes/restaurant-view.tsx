@@ -10,10 +10,10 @@ export default function RestaurantView() {
   return (
     <>
       <main className="flex items-start">
-        <div className="py-10 px-16 hidden lg:flex">
+        <div className="py-12 px-12 hidden lg:flex">
           <FilterMenu />
         </div>
-        <div className="py-12 px-6">
+        <div className="py-16 px-4">
           <Establishments />
         </div>
       </main>
