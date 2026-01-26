@@ -10,7 +10,7 @@ export default function Establishments() {
             ESTABLISHMENTS
           </h1>
         </header>
-        <ScrollArea className="h-120 w-[60%]">
+        <ScrollArea className="h-120">
           <section className="flex flex-wrap gap-2 md:gap-12 lg:gap-8 justify-start">
             <EstablishmentsCard name="La Tocaaaaaaaaaaaaaaa" rating={3} />
             <EstablishmentsCard name="La Toca" />
