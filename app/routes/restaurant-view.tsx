@@ -13,7 +13,7 @@ export default function RestaurantView() {
         <div className="py-12 px-12 hidden lg:flex">
           <FilterMenu />
         </div>
-        <div className="py-16 px-4">
+        <div className="py-16 px-10">
           <Establishments />
         </div>
       </main>
