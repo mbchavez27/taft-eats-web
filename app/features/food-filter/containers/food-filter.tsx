@@ -1,3 +1,10 @@
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '~/components/ui/carousel'
 import FoodCard from '../components/food-card'
 
 export default function FoodFilter() {
@@ -9,8 +16,25 @@ export default function FoodFilter() {
             FOODS
           </h1>
         </header>
-        <section className="flex gap-4">
-          <FoodCard />
+
+        <section className="w-full">
+          <Carousel
+            opts={{
+              align: 'start',
+            }}
+            className="w-[60%]"
+          >
+            <CarouselContent className="flex gap-4">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <CarouselItem key={index} className="w-fit basis-auto">
+                  <FoodCard />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </section>
       </main>
     </>
