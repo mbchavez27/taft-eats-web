@@ -1,7 +1,7 @@
 import { useParams } from 'react-router'
 import type { Route } from '../+types/restaurants/index'
-import IndivEstablishment from '~/features/establishments/containers/establishment-details'
-import EstablishmentDetails from '~/features/establishments/containers/establishment-details'
+import FilterMenu from '~/features/filter-menu/containers/filter-menu'
+import EstablishmentContent from '~/features/establishments/containers/establishment-content'
 
 export function meta({ params }: Route.MetaArgs) {
   const restaurant_id = params.restaurant
@@ -16,10 +16,16 @@ export default function Restaurant() {
 
   return (
     <>
-      <main>
-        <section className="px-16 py-12">
-          <EstablishmentDetails />
-        </section>
+      <main className="flex flex-col lg:flex-row py-12 px-10 gap-8">
+        {/* Sidebar */}
+        <div className="hidden lg:block lg:w-1/4">
+          <FilterMenu />
+        </div>
+
+        {/* Main content */}
+        <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
+          <EstablishmentContent />
+        </div>
       </main>
     </>
   )

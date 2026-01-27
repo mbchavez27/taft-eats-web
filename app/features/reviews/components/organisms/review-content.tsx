@@ -22,7 +22,7 @@ export default function ReviewContent() {
   return (
     <>
       <main className="font-lexend text-2xl flex gap-3 items-center">
-        <p className="truncate w-[50ch]" ref={textRef}>
+        <p className="truncate w-[25ch]" ref={textRef}>
           Food was good! Service was fast and the staff were very nice! Love the
           ambiance inside too. Would come back again!
         </p>

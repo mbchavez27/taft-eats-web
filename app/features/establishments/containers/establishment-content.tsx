@@ -1,7 +1,7 @@
 import ReviewSorts from '~/features/reviews/containers/review-sorts'
 import ReviewsList from '~/features/reviews/containers/reviews-list'
 
-export default function EstablishmentDetails() {
+export default function EstablishmentContent() {
   return (
     <main className="flex flex-col gap-8">
       <header>
