@@ -5,7 +5,7 @@ export default function EstablishmentContent() {
   return (
     <main className="flex flex-col gap-8">
       <header>
-        <h1 className="text-[#F9ECA8] font-climate uppercase text-7xl tracking-wider">
+        <h1 className="text-[#F9ECA8] font-climate uppercase text-3xl md:text-6xl lg:text-7xl tracking-wider">
           EL POCO CANTINA
         </h1>
         <p className="font-lexend text-xl font-bold text-[#9CB16F]">

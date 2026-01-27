@@ -12,7 +12,7 @@ export default function ReviewSorts() {
 
   return (
     <main className="flex gap-8">
-      <section className="flex gap-2">
+      <section className="flex gap-2 flex-wrap">
         {/* Newest button */}
         <div
           className={`font-inter font-bold text-xl rounded-full px-5 py-1 border-2 transition duration-100 cursor-pointer flex gap-1
