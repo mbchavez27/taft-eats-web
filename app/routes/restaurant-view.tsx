@@ -16,7 +16,7 @@ export default function RestaurantView() {
       </div>
 
       {/* Main content */}
-      <div className="w-screen lg:w-3/4 flex flex-col gap-8">
+      <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
         <FoodFilter />
         <Establishments />
       </div>
