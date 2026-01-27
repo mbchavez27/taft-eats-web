@@ -17,12 +17,11 @@ export default function FoodFilter() {
           </h1>
         </header>
 
-        <section className="w-full">
+        <section>
           <Carousel
             opts={{
               align: 'start',
             }}
-            className="w-[60%]"
           >
             <CarouselContent className="flex gap-4">
               {Array.from({ length: 10 }).map((_, index) => (
@@ -32,8 +31,8 @@ export default function FoodFilter() {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="mr-8" />
+            <CarouselNext className="mr-8" />
           </Carousel>
         </section>
       </main>

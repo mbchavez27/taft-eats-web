@@ -9,16 +9,17 @@ export function meta({}: Route.MetaArgs) {
 
 export default function RestaurantView() {
   return (
-    <>
-      <main className="flex items-start">
-        <div className="py-12 px-12 hidden lg:flex">
-          <FilterMenu />
-        </div>
-        <div className="flex flex-col gap-8 py-12 px-10">
-          <FoodFilter />
-          <Establishments />
-        </div>
-      </main>
-    </>
+    <main className="flex flex-col lg:flex-row py-12 px-10 gap-8">
+      {/* Sidebar */}
+      <div className="hidden lg:block lg:w-1/4">
+        <FilterMenu />
+      </div>
+
+      {/* Main content */}
+      <div className="w-screen lg:w-3/4 flex flex-col gap-8">
+        <FoodFilter />
+        <Establishments />
+      </div>
+    </main>
   )
 }
