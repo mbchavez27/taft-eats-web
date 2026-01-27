@@ -11,7 +11,7 @@ export default function Establishments() {
           </h1>
         </header>
         <ScrollArea className="h-120">
-          <section className="flex flex-wrap gap-2 md:gap-12 lg:gap-8 justify-start">
+          <section className="flex flex-wrap gap-6 md:gap-12 lg:gap-9 justify-start">
             <EstablishmentsCard name="La Tocaaaaaaaaaaaaaaa" rating={3} />
             <EstablishmentsCard name="La Toca" />
             <EstablishmentsCard name="La Toca" />
