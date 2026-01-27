@@ -1,5 +1,5 @@
 import FilterMenu from '~/features/filter-menu/containers/filter-menu'
-import type { Route } from './+types/restaurant-view'
+import type { Route } from './+types/index'
 import Establishments from '~/features/establishments/containers/establishments'
 import FoodFilter from '~/features/food-filter/containers/food-filter'
 
@@ -7,7 +7,7 @@ export function meta({}: Route.MetaArgs) {
   return [{ title: 'Taft Eats' }, { name: 'description', content: 'Taft Eats' }]
 }
 
-export default function RestaurantView() {
+export default function Home() {
   return (
     <main className="flex flex-col lg:flex-row py-12 px-10 gap-8">
       {/* Sidebar */}
