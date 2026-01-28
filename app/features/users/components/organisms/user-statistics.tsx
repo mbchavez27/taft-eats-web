@@ -5,18 +5,26 @@ import UserData from "../molecules/user-data";
 
 export default function UserStatistics() {
   return (
-    <>
-      <main className="bg-white rounded-3xl px-6 py-8 flex flex-row gap-8">
+    <main className="bg-white rounded-3xl px-8 py-10 flex flex-row gap-10 w-full">
+      <div className="flex-1 flex flex-col gap-4 justify-center items-center">
         <UserData label="Account Created" value={2026} icon={FaUser} />
-        <div className="w-px h-full bg-gray-300" />
+      </div>
+
+      <div className="w-px bg-gray-300 self-stretch" />
+
+      <div className="flex-1 flex flex-col gap-4 justify-center items-center">
         <UserData
           label="Saved Establishments"
           value={3}
           icon={MdOutlineRestaurantMenu}
         />
-        <div className="w-px h-full bg-gray-300" />
+      </div>
+
+      <div className="w-px bg-gray-300 self-stretch" />
+
+      <div className="flex-1 flex flex-col gap-4 justify-center items-center">
         <UserData label="Created Reviews" value={20} icon={FaStar} />
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

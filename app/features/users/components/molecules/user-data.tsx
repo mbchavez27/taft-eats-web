@@ -1,6 +1,4 @@
 import type { IconType } from "react-icons/lib";
-import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FaStar } from "react-icons/fa6";
 
 export default function UserData({
   label,
