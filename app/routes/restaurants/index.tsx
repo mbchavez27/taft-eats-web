@@ -4,9 +4,8 @@ import FilterMenu from '~/features/filter-menu/containers/filter-menu'
 import EstablishmentContent from '~/features/establishments/containers/establishment-content'
 import EstablishmentDetails from '~/features/establishments/containers/establishment-details'
 import EstablishmentHeader from '~/features/establishments/components/organisms/establishment-header'
-import AddReviewButton from '~/features/reviews/components/organisms/review-button'
 import { useState } from 'react'
-import ReviewButton from '~/features/reviews/components/organisms/review-button'
+import ReviewButton from '~/features/reviews/components/molecules/review-button'
 
 export function meta({ params }: Route.MetaArgs) {
   const restaurant_id = params.restaurant
@@ -32,14 +31,32 @@ export default function Restaurant() {
         <div className="order-1 lg:order-2 w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
           <EstablishmentHeader />
           <EstablishmentContent />
-          <ReviewButton
-            onClick={() => {
-              setIsReviewOpen(!isReviewOpen)
-              console.log(isReviewOpen)
-            }}
-          >
-            Write a Review
-          </ReviewButton>
+          {isReviewOpen ? (
+            <>
+              <div className="flex justify-end gap-4">
+                <ReviewButton
+                  onClick={() => {
+                    setIsReviewOpen(false)
+                  }}
+                >
+                  Cancel
+                </ReviewButton>
+                <ReviewButton>Submit</ReviewButton>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex justify-end">
+                <ReviewButton
+                  onClick={() => {
+                    setIsReviewOpen(true)
+                  }}
+                >
+                  Write a Review
+                </ReviewButton>
+              </div>
+            </>
+          )}
         </div>
       </main>
     </>
