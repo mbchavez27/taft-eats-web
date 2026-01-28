@@ -23,12 +23,12 @@ export default function Restaurant() {
     <>
       <main className="flex flex-col lg:flex-row py-12 px-10 lg:gap-8 gap-16">
         {/* Sidebar */}
-        <div className="flex order-2 lg:order-1 lg:w-1/4">
+        <div className="flex lg:w-1/4">
           <EstablishmentDetails isReviewOpen={isReviewOpen} />
         </div>
 
         {/* Main content */}
-        <div className="order-1 lg:order-2 w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
+        <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
           <EstablishmentHeader />
           {isReviewOpen ? (
             <>
