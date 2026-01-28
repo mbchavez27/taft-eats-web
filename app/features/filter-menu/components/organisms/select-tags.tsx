@@ -1,13 +1,13 @@
-import { ScrollArea } from '~/components/ui/scroll-area'
-import { Checkbox } from '~/components/ui/checkbox'
-import { cuisines } from '../data/dummy_cusine'
+import { ScrollArea } from "~/components/ui/scroll-area";
+import { Checkbox } from "~/components/ui/checkbox";
+import { tags } from "../../data/dummy_tags";
 
-export default function SelectCuisines() {
+export default function SelectTags() {
   return (
     <>
-      <section className="flex flex-col gap-2 px-8 py-4 pb-6">
+      <section className="flex flex-col gap-2 px-8 py-2 pb-8">
         <div>
-          <h1 className="font-bold text-2xl">Cuisines</h1>
+          <h1 className="font-bold text-2xl">Tags</h1>
         </div>
         <div className="text-[#BEBEBE] text-sm px-3">
           <div className="flex items-center gap-4">
@@ -27,11 +27,11 @@ export default function SelectCuisines() {
           </div>
 
           <div className="font-inter text-[#326F33] font-semibold">
-            <ScrollArea className="px-4 py-2 text-lg flex flex-col gap-6 h-32 scroll-left">
-              {cuisines.map((cuisine) => (
-                <div key={cuisine.id} className="flex gap-2 items-center">
+            <ScrollArea className="px-4 py-2 text-lg flex flex-col gap-2 h-32 scroll-left">
+              {tags.map((tag) => (
+                <div key={tag.id} className="flex gap-6 items-center">
                   <Checkbox
-                    id={cuisine.id}
+                    id={tag.id}
                     className="
               border-2
               border-green-600
@@ -42,7 +42,7 @@ export default function SelectCuisines() {
               data-[state=checked]:text-white
             "
                   />
-                  <label htmlFor={cuisine.id}>{cuisine.label}</label>
+                  <label htmlFor={tag.id}>{tag.label}</label>
                 </div>
               ))}
             </ScrollArea>
@@ -50,5 +50,5 @@ export default function SelectCuisines() {
         </div>
       </section>
     </>
-  )
+  );
 }
