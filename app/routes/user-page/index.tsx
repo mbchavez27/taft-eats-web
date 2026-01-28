@@ -21,7 +21,7 @@ export default function UserPage() {
 
         {/* Main content */}
         <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
-          <section className="flex flex-row gap-10">
+          <section className="flex flex-row flex-wrap gap-10">
             <div className="flex-2">
               <UserStatistics />
             </div>
