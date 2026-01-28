@@ -1,11 +1,10 @@
 import { useParams } from 'react-router'
 import type { Route } from '../+types/restaurants/index'
-import FilterMenu from '~/features/filter-menu/containers/filter-menu'
-import EstablishmentContent from '~/features/establishments/containers/establishment-content'
 import EstablishmentDetails from '~/features/establishments/containers/establishment-details'
 import EstablishmentHeader from '~/features/establishments/components/organisms/establishment-header'
 import { useState } from 'react'
 import ReviewButton from '~/features/reviews/components/molecules/review-button'
+import EstablishmentReviews from '~/features/reviews/containers/establishment-reviews'
 
 export function meta({ params }: Route.MetaArgs) {
   const restaurant_id = params.restaurant
@@ -30,7 +29,7 @@ export default function Restaurant() {
         {/* Main content */}
         <div className="order-1 lg:order-2 w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
           <EstablishmentHeader />
-          <EstablishmentContent />
+          {isReviewOpen ? <></> : <EstablishmentReviews />}
           {isReviewOpen ? (
             <>
               <div className="flex justify-end gap-4">
