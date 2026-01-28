@@ -1,5 +1,5 @@
 import ImageContainer from "~/features/shared/container/image-container";
-import UserInfo from "../components/user-info";
+import UserInfo from "../components/organisms/user-info";
 
 export default function UserDetails() {
   return (

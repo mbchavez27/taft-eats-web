@@ -1,5 +1,6 @@
 import UserDetails from "~/features/users/containers/user-details";
 import type { Route } from "../+types/user-page/index";
+import UserStatistics from "~/features/users/components/organisms/user-statistics";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -18,7 +19,11 @@ export default function UserPage() {
         </div>
 
         {/* Main content */}
-        <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8"></div>
+        <div className="w-full lg:w-3/4 flex flex-col gap-6 md:gap-8">
+          <section className="flex flex-row gap-3">
+            <UserStatistics />
+          </section>
+        </div>
       </main>
     </>
   );
