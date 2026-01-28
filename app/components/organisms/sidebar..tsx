@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CiBookmark } from "react-icons/ci";
 import { IoLocationOutline, IoHomeOutline } from "react-icons/io5";
 import { AiOutlineUser } from "react-icons/ai";
+import { CiLogout } from "react-icons/ci";
 import {
   Sheet,
   SheetContent,
@@ -10,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "~/components/ui/sheet";
+import { Link } from "react-router";
 
 export default function SideBar() {
   const [isAuthendicated, setAuthentication] = useState(true);
@@ -41,10 +43,13 @@ export default function SideBar() {
               {isAuthendicated ? (
                 <>
                   <div className="flex justify-center gap-3 p-2 text-white ">
-                    <div className="flex gap-2 items-center border border-white px-3 py-2 rounded-lg">
+                    <Link
+                      to={"/user/"}
+                      className="flex gap-2 items-center border border-white px-3 py-2 rounded-lg"
+                    >
                       <AiOutlineUser size={24} />
                       User
-                    </div>
+                    </Link>
                     <div className="flex gap-2 items-center border border-white px-3 py-2 rounded-lg">
                       <CiBookmark size={24} />
                       Bookmark
@@ -71,6 +76,10 @@ export default function SideBar() {
               <div className="bg-[#326F33] border-white border text-white px-4 py-2 rounded-full flex gap-2">
                 <IoLocationOutline size={24} />
                 Map View
+              </div>
+              <div className="bg-[#326F33] border-white border text-white px-4 py-2 rounded-full flex gap-2">
+                <CiLogout size={24} />
+                Log Out
               </div>
             </div>
           </SheetContent>
