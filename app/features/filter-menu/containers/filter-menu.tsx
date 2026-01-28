@@ -1,7 +1,7 @@
-import PriceRange from '../components/price-range'
-import SelectCuisines from '../components/select-cusines'
-import SelectTags from '../components/select-tags'
-import StarRating from '../components/star-rating'
+import PriceRange from "../components/organisms/price-range";
+import SelectCuisines from "../components/organisms/select-cusines";
+import SelectTags from "../components/organisms/select-tags";
+import StarRating from "../components/organisms/star-rating";
 
 export default function FilterMenu() {
   return (
@@ -16,5 +16,5 @@ export default function FilterMenu() {
         <SelectTags />
       </main>
     </>
-  )
+  );
 }
