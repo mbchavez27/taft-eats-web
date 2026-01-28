@@ -1,8 +1,12 @@
 type AddReviewButtonProps = {
   onClick?: () => void
+  children: React.ReactNode
 }
 
-export default function AddReviewButton({ onClick }: AddReviewButtonProps) {
+export default function ReviewButton({
+  onClick,
+  children,
+}: AddReviewButtonProps) {
   return (
     <>
       <main className="flex justify-end">
@@ -11,7 +15,7 @@ export default function AddReviewButton({ onClick }: AddReviewButtonProps) {
            transition duration-75"
           onClick={onClick}
         >
-          Write a Review
+          {children}
         </button>
       </main>
     </>
