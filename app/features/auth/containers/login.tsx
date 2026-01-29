@@ -1,12 +1,10 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
-} from '~/components/ui/dialog'
-import { Checkbox } from '~/components/ui/checkbox'
+} from "~/components/ui/dialog";
+import { Checkbox } from "~/components/ui/checkbox";
 
 export default function Login() {
   return (
@@ -25,7 +23,7 @@ export default function Login() {
               width={80}
               height={80}
             />
-            <h1>Log in to Taft Eats!</h1>
+            <h1 className="text-center">Log in to Taft Eats!</h1>
           </DialogHeader>
           <section className="flex flex-col justify-center items-center gap-4">
             <input
@@ -64,5 +62,5 @@ export default function Login() {
         </DialogContent>
       </Dialog>
     </>
-  )
+  );
 }
