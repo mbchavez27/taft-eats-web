@@ -15,4 +15,9 @@ export default [
     ...prefix("user", [
     route("/", "./routes/user-page/index.tsx"),
   ]),
+
+
+  ...prefix("auth", [
+    route("/sign-up", "./routes/auth/sign-up/index.tsx"),
+  ]),
 ] satisfies RouteConfig;
