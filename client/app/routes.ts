@@ -15,4 +15,8 @@ export default [
     ...prefix("user", [
     route("/", "./routes/user-page/index.tsx"),
   ]),
+
+    ...prefix("maps", [
+    route("/", "./routes/map-view/index.tsx"),
+  ]),
 ] satisfies RouteConfig;
