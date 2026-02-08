@@ -1,20 +1,20 @@
-import { useState } from "react";
-import { IoLocationOutline, IoHomeOutline } from "react-icons/io5";
-import { CiBookmark } from "react-icons/ci";
-import SearchField from "~/components/molecules/searchfield";
-import SideBar from "./sidebar.";
-import { Link } from "react-router";
-import UserPopover from "./user-popover";
-import Login from "~/features/auth/containers/login";
-import Signup from "~/features/auth/containers/signup";
+import { useState } from 'react'
+import { IoLocationOutline, IoHomeOutline } from 'react-icons/io5'
+import { CiBookmark } from 'react-icons/ci'
+import SearchField from '~/components/molecules/searchfield'
+import SideBar from './sidebar.'
+import { Link } from 'react-router'
+import UserPopover from './user-popover'
+import Login from '~/features/auth/containers/login'
+import Signup from '~/features/auth/containers/signup'
 
 export default function NavBar() {
-  const [isAuthendicated, setAuthentication] = useState(false);
+  const [isAuthendicated, setAuthentication] = useState(false)
   return (
     <>
       <nav className="bg-[#FFFFFF] flex items-center justify-between px-8 lg:px-16 md:py-2">
         <section>
-          <Link to={"/"} className="flex items-center gap-1">
+          <Link to={'/'} className="flex items-center gap-1">
             <img
               src="/logos/tafteats_logo.png"
               alt="logo"
@@ -37,9 +37,12 @@ export default function NavBar() {
               <Link to="/" className="bg-[#326F33] text-white p-2 rounded-full">
                 <IoHomeOutline size={24} />
               </Link>
-              <div className="bg-[#326F33] text-white p-2 rounded-full">
+              <Link
+                to="/maps/"
+                className="bg-[#326F33] text-white p-2 rounded-full"
+              >
                 <IoLocationOutline size={24} />
-              </div>
+              </Link>
             </div>
             <div className="flex gap-3">
               {isAuthendicated ? (
@@ -62,5 +65,5 @@ export default function NavBar() {
         </section>
       </nav>
     </>
-  );
+  )
 }
