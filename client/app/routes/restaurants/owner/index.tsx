@@ -1,23 +1,23 @@
-import { useParams } from "react-router";
-import type { Route } from "../+types/restaurants/index";
-import EstablishmentDetails from "~/features/establishments/containers/establishment-details";
-import EstablishmentHeader from "~/features/establishments/components/organisms/establishment-header";
-import { useState } from "react";
-import ReviewButton from "~/features/reviews/components/molecules/review-button";
-import EstablishmentReviews from "~/features/reviews/containers/establishment-reviews";
-import ReviewForms from "~/features/reviews/containers/review-forms";
+import { useParams } from 'react-router'
+import type { Route } from '../+types/restaurants/index'
+import EstablishmentDetails from '~/features/establishments/containers/establishment-details'
+import EstablishmentHeader from '~/features/establishments/components/organisms/establishment-header'
+import { useState } from 'react'
+import ReviewButton from '~/features/reviews/components/molecules/review-button'
+import EstablishmentReviews from '~/features/reviews/containers/establishment-reviews'
+import ReviewForms from '~/features/reviews/containers/review-forms'
 
 export function meta({ params }: Route.MetaArgs) {
-  const restaurant_id = params.restaurant;
+  const restaurant_id = params.restaurant
   return [
-    { title: "Taft Eats - " + restaurant_id },
-    { name: "description", content: "Taft Eats" },
-  ];
+    { title: 'Taft Eats - ' + restaurant_id },
+    { name: 'description', content: 'Taft Eats' },
+  ]
 }
 
 export default function Restaurant() {
-  const { restaurant } = useParams();
-  const [isReviewOpen, setIsReviewOpen] = useState(false);
+  const { restaurant } = useParams()
+  const [isReviewOpen, setIsReviewOpen] = useState(false)
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function Restaurant() {
               <div className="flex justify-end gap-4">
                 <ReviewButton
                   onClick={() => {
-                    setIsReviewOpen(false);
+                    setIsReviewOpen(false)
                   }}
                 >
                   Cancel
@@ -50,21 +50,9 @@ export default function Restaurant() {
                 <ReviewButton>Submit</ReviewButton>
               </div>
             </>
-          ) : (
-            <>
-              <div className="flex justify-end">
-                <ReviewButton
-                  onClick={() => {
-                    setIsReviewOpen(true);
-                  }}
-                >
-                  Write a Review
-                </ReviewButton>
-              </div>
-            </>
-          )}
+          ) : null}
         </div>
       </main>
     </>
-  );
+  )
 }
