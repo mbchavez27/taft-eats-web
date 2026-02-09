@@ -7,9 +7,12 @@ import { Link } from 'react-router'
 import UserPopover from './user-popover'
 import Login from '~/features/auth/containers/login'
 import Signup from '~/features/auth/containers/signup'
+import OwnerSettings from '~/features/users/containers/owner-settings'
 
 export default function NavBar() {
   const [isAuthendicated, setAuthentication] = useState(false)
+  const [isOwner, setIsOwner] = useState(true)
+
   return (
     <>
       <nav className="bg-[#FFFFFF] flex items-center justify-between px-8 lg:px-16 md:py-2">
@@ -28,39 +31,64 @@ export default function NavBar() {
           </Link>
         </section>
         <SideBar />
+        {isOwner ? (
+          <>
+            <div className="hidden lg:flex items-center">
+              <SearchField />
+            </div>
+          </>
+        ) : null}
         <section className="hidden lg:flex font-inter text-lg items-center gap-12">
-          <div className="flex items-center">
-            <SearchField />
-          </div>
           <div className="flex gap-12">
-            <div className="flex gap-3">
-              <Link to="/" className="bg-[#326F33] text-white p-2 rounded-full">
-                <IoHomeOutline size={24} />
-              </Link>
-              <Link
-                to="/maps/"
-                className="bg-[#326F33] text-white p-2 rounded-full"
-              >
-                <IoLocationOutline size={24} />
-              </Link>
-            </div>
-            <div className="flex gap-3">
-              {isAuthendicated ? (
-                <>
-                  <div className="bg-[#326F33] text-white p-2 rounded-full">
-                    <CiBookmark size={24} />
-                  </div>
+            {isOwner ? null : (
+              <>
+                <div className="hidden lg:flex items-center">
+                  <SearchField />
+                </div>
+              </>
+            )}
+            {isOwner ? (
+              <>
+                <div className="flex gap-3">
+                  <OwnerSettings />
                   <UserPopover />
-                </>
-              ) : (
-                <>
-                  <div className="font-medium flex ml-4 gap-5">
-                    <Login />
-                    <Signup />
-                  </div>
-                </>
-              )}
-            </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="flex gap-3">
+                  <Link
+                    to="/"
+                    className="bg-[#326F33] text-white p-2 rounded-full"
+                  >
+                    <IoHomeOutline size={24} />
+                  </Link>
+                  <Link
+                    to="/maps/"
+                    className="bg-[#326F33] text-white p-2 rounded-full"
+                  >
+                    <IoLocationOutline size={24} />
+                  </Link>
+                </div>
+                <div className="flex gap-3">
+                  {isAuthendicated ? (
+                    <>
+                      <div className="bg-[#326F33] text-white p-2 rounded-full">
+                        <CiBookmark size={24} />
+                      </div>
+                      <UserPopover />
+                    </>
+                  ) : (
+                    <>
+                      <div className="font-medium flex ml-4 gap-5">
+                        <Login />
+                        <Signup />
+                      </div>
+                    </>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </section>
       </nav>
