@@ -5,6 +5,7 @@ import {
   PopoverTrigger,
 } from '~/components/ui/popover'
 import { CiSettings } from 'react-icons/ci'
+import DeleteConsent from './delete-consent'
 
 export default function OwnerSettings() {
   return (
@@ -30,9 +31,7 @@ export default function OwnerSettings() {
               <p className="text-xs text-[#ED1C24]">
                 Warning: this action cannot be undone!
               </p>
-              <button className="px-4 py-2 text-white bg-[#326F33] border-[#326F33] border rounded-2xl hover:opacity-50 duration-100 transition">
-                Delete Establishment
-              </button>
+              <DeleteConsent />
             </div>
           </section>
         </PopoverContent>
