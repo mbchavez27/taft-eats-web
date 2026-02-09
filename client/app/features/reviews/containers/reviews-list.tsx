@@ -1,12 +1,12 @@
-import { ScrollArea } from "~/components/ui/scroll-area";
-import SingleReview from "../components/organisms/single-review";
+import { ScrollArea } from '~/components/ui/scroll-area'
+import SingleReview from '../components/organisms/single-review'
 
 export default function ReviewsList() {
   return (
     <main className="bg-white rounded-xl w-full p-4 sm:p-6 flex flex-col gap-4 h-125 overflow-hidden">
       <ScrollArea className="h-full w-full overflow-x-auto">
         <div className="flex flex-col gap-4">
-          <SingleReview />
+          <SingleReview is_owner />
           <SingleReview />
           <SingleReview />
           <SingleReview />
@@ -17,5 +17,5 @@ export default function ReviewsList() {
         </div>
       </ScrollArea>
     </main>
-  );
+  )
 }
