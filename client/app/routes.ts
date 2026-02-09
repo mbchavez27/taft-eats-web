@@ -9,6 +9,7 @@ export default [
   index("./routes/index.tsx"),
 
     ...prefix("restaurants", [
+      route("/owner/", "./routes/restaurants/owner/index.tsx"),
     route(":restaurant", "./routes/restaurants/index.tsx"),
   ]),
 
