@@ -34,7 +34,7 @@ export default function NavBar() {
         {isOwner ? (
           <>
             <div className="hidden lg:flex items-center">
-              <SearchField />
+              <SearchField placeholder="Search for restaurants, cuisines, and dishes" />
             </div>
           </>
         ) : null}
@@ -43,7 +43,7 @@ export default function NavBar() {
             {isOwner ? null : (
               <>
                 <div className="hidden lg:flex items-center">
-                  <SearchField />
+                  <SearchField placeholder="Search for restaurants, cuisines, and dishes" />
                 </div>
               </>
             )}
