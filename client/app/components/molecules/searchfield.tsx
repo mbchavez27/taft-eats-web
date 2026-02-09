@@ -9,7 +9,7 @@ export default function SearchField({ placeholder }: { placeholder?: string }) {
   }
 
   return (
-    <div className="relative w-full max-w-sm font-inter">
+    <div className="relative w-full max-w-[400px] font-inter">
       <input
         ref={inputRef}
         type="text"
