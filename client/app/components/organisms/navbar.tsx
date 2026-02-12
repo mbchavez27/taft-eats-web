@@ -6,7 +6,6 @@ import SideBar from "./sidebar.";
 import { Link } from "react-router";
 import UserPopover from "./user-popover";
 import Login from "~/features/auth/containers/login";
-import Signup from "~/features/auth/containers/signup";
 
 export default function NavBar() {
   const [isAuthendicated, setAuthentication] = useState(false);
@@ -52,8 +51,18 @@ export default function NavBar() {
               ) : (
                 <>
                   <div className="font-medium flex ml-4 gap-5">
-                    <Login />
-                    <Signup />
+                    <Link
+                      to={"/auth/login"}
+                      className="bg-white text-black border border-black px-4 py-1 rounded-lg"
+                    >
+                      Log In
+                    </Link>
+                    <Link
+                      to={"/auth/sign-up"}
+                      className="bg-[#326F33] text-white px-3 py-1 rounded-lg"
+                    >
+                      Sign Up
+                    </Link>
                   </div>
                 </>
               )}
