@@ -1,20 +1,23 @@
-import { useState } from "react";
-import { IoLocationOutline, IoHomeOutline } from "react-icons/io5";
-import { CiBookmark } from "react-icons/ci";
-import SearchField from "~/components/molecules/searchfield";
-import SideBar from "./sidebar.";
-import { Link } from "react-router";
-import UserPopover from "./user-popover";
-import Login from "~/features/auth/containers/login";
-import Signup from "~/features/auth/containers/signup";
+import { useState } from 'react'
+import { IoLocationOutline, IoHomeOutline } from 'react-icons/io5'
+import { CiBookmark } from 'react-icons/ci'
+import SearchField from '~/components/molecules/searchfield'
+import SideBar from './sidebar.'
+import { Link } from 'react-router'
+import UserPopover from './user-popover'
+import Login from '~/features/auth/containers/login'
+import Signup from '~/features/auth/containers/signup'
+import OwnerSettings from '~/features/users/containers/owner-settings'
 
 export default function NavBar() {
-  const [isAuthendicated, setAuthentication] = useState(false);
+  const [isAuthendicated, setAuthentication] = useState(false)
+  const [isOwner, setIsOwner] = useState(true)
+
   return (
     <>
       <nav className="bg-[#FFFFFF] flex items-center justify-between px-8 lg:px-16 md:py-2">
         <section>
-          <Link to={"/"} className="flex items-center gap-1">
+          <Link to={'/'} className="flex items-center gap-1">
             <img
               src="/logos/tafteats_logo.png"
               alt="logo"
@@ -28,39 +31,67 @@ export default function NavBar() {
           </Link>
         </section>
         <SideBar />
+        {isOwner ? (
+          <>
+            <div className="hidden lg:flex items-center">
+              <SearchField />
+            </div>
+          </>
+        ) : null}
         <section className="hidden lg:flex font-inter text-lg items-center gap-12">
-          <div className="flex items-center">
-            <SearchField />
-          </div>
           <div className="flex gap-12">
-            <div className="flex gap-3">
-              <Link to="/" className="bg-[#326F33] text-white p-2 rounded-full">
-                <IoHomeOutline size={24} />
-              </Link>
-              <div className="bg-[#326F33] text-white p-2 rounded-full">
-                <IoLocationOutline size={24} />
-              </div>
-            </div>
-            <div className="flex gap-3">
-              {isAuthendicated ? (
-                <>
-                  <div className="bg-[#326F33] text-white p-2 rounded-full">
-                    <CiBookmark size={24} />
-                  </div>
+            {isOwner ? null : (
+              <>
+                <div className="hidden lg:flex items-center">
+                  <SearchField />
+                </div>
+              </>
+            )}
+            {isOwner ? (
+              <>
+                <div className="flex gap-3">
+                  <OwnerSettings />
                   <UserPopover />
-                </>
-              ) : (
-                <>
-                  <div className="font-medium flex ml-4 gap-5">
-                    <Login />
-                    <Signup />
-                  </div>
-                </>
-              )}
-            </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="flex gap-3">
+                  <Link
+                    to="/"
+                    className="bg-[#326F33] text-white p-2 rounded-full"
+                  >
+                    <IoHomeOutline size={24} />
+                  </Link>
+                  <Link
+                    to="/maps/"
+                    className="bg-[#326F33] text-white p-2 rounded-full"
+                  >
+                    <IoLocationOutline size={24} />
+                  </Link>
+                </div>
+                <div className="flex gap-3">
+                  {isAuthendicated ? (
+                    <>
+                      <div className="bg-[#326F33] text-white p-2 rounded-full">
+                        <CiBookmark size={24} />
+                      </div>
+                      <UserPopover />
+                    </>
+                  ) : (
+                    <>
+                      <div className="font-medium flex ml-4 gap-5">
+                        <Login />
+                        <Signup />
+                      </div>
+                    </>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </section>
       </nav>
     </>
-  );
+  )
 }

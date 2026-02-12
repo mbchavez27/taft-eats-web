@@ -4,9 +4,11 @@ import EstablishmentRating from './establishment-rating'
 export default function EstablishmentsCard({
   name,
   rating,
+  show_ratings,
 }: {
   name?: string
   rating?: number
+  show_ratings?: boolean
 }) {
   return (
     <>
@@ -24,9 +26,13 @@ export default function EstablishmentsCard({
             {name ?? 'Establishment Name'}
           </div>
         </section>
-        <section className="flex justify-center">
-          <EstablishmentRating rating={rating} />
-        </section>
+        {show_ratings ? (
+          <>
+            <section className="flex justify-center">
+              <EstablishmentRating rating={rating} />
+            </section>
+          </>
+        ) : null}
       </Link>
     </>
   )

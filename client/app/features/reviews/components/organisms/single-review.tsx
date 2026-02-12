@@ -3,12 +3,12 @@ import ReviewContent from './review-content'
 import ReviewRating from './review-rating'
 import UserDetails from './user-details'
 
-export default function SingleReview() {
+export default function SingleReview({ is_owner }: { is_owner?: boolean }) {
   return (
     <main
       className="
         bg-white rounded-lg border-2 border-black drop-shadow-xl
-        px-4 py-4
+        px-6 py-4
         flex flex-col gap-4
         lg:flex-row lg:items-center lg:justify-between
       "
@@ -22,7 +22,17 @@ export default function SingleReview() {
       {/* RIGHT SIDE */}
       <div className="flex justify-between items-center gap-6 lg:gap-12">
         <ReviewRating />
-        <ReactionCounter />
+        {is_owner ? (
+          <>
+            <button className="font-inter font-bold text-[#326F33] bg-[#FFCB00] text-2xl px-3 py-1 rounded-2xl">
+              Reply
+            </button>
+          </>
+        ) : (
+          <>
+            <ReactionCounter />
+          </>
+        )}
       </div>
     </main>
   )
