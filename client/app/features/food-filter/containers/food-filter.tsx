@@ -6,6 +6,7 @@ import {
   CarouselPrevious,
 } from '~/components/ui/carousel'
 import FoodCard from '../components/food-card'
+import { food_filters } from '../data/food'
 
 export default function FoodFilter() {
   return (
@@ -22,14 +23,18 @@ export default function FoodFilter() {
             }}
           >
             <CarouselContent className="flex gap-4">
-              {Array.from({ length: 10 }).map((_, index) => (
-                <CarouselItem
-                  key={index}
-                  className="flex-none w-full sm:w-1/2 md:w-1/3 lg:w-fit basis-auto"
-                >
-                  <FoodCard />
-                </CarouselItem>
-              ))}
+              {food_filters.map((food_filter, index) => {
+                return (
+                  <>
+                    <CarouselItem
+                      key={food_filter.id}
+                      className="flex-none w-full sm:w-1/2 md:w-1/3 lg:w-fit basis-auto"
+                    >
+                      <FoodCard img={food_filter.img} food={food_filter.name} />
+                    </CarouselItem>
+                  </>
+                )
+              })}
             </CarouselContent>
 
             <CarouselPrevious className="translate-x-8 bg-[#FFBF00] outline-none border-none drop-shadow-2xl" />
