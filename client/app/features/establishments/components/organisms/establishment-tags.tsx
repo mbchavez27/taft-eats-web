@@ -11,7 +11,7 @@ export default function EstablishmentTags({
 }) {
   return (
     <>
-      <main className="text-[#9CB16F] bg-white rounded-lg px-3 py-4 flex flex-col justify-center items-center gap-4 font-bold">
+      <main className="text-[#416CAE] bg-white rounded-lg px-3 py-4 flex flex-col justify-center items-center gap-4 font-bold">
         <div className="text-xl">
           <p>
             {stars ?? 5} ({numberOfReviews ?? 1000}+){' '}
@@ -19,7 +19,7 @@ export default function EstablishmentTags({
         </div>
         <div className="flex gap-2">
           {Array.from({ length: stars ?? 5 }).map((_, index) => (
-            <FaStar key={index} size={26} />
+            <FaStar key={index} size={26} color="#416CAE" />
           ))}
         </div>
         <div className="flex justify-center flex-wrap gap-2 px-3">
@@ -27,7 +27,7 @@ export default function EstablishmentTags({
             (tag, index) => (
               <div
                 key={index}
-                className="bg-[#326F33] text-white rounded-full px-4 py-1 text-md font-semibold flex grow justify-center"
+                className="bg-[#416CAE] text-white rounded-full px-4 py-1 text-md font-semibold flex grow justify-center"
               >
                 {tag}
               </div>

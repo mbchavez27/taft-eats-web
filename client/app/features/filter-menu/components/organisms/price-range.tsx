@@ -6,7 +6,7 @@ export default function PriceRange() {
       <h1 className="font-bold text-2xl">Price Range</h1>
 
       <div className="py-1 flex gap-2">
-        <Prices />
+        <Prices selectedColor="border-black" unselectedColor="border-black" />
       </div>
     </section>
   )

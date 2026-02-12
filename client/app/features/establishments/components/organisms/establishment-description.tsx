@@ -1,7 +1,7 @@
 export default function EstablishmentDesription() {
   return (
     <>
-      <section className="text-lg font-medium whitespace-pre-line">
+      <section className="text-md font-medium whitespace-pre-line bg-white text-black py-4 px-6 rounded-lg">
         <p>
           {`“With tiled walls and graffiti art, this vibrant eatery exudes
 playfulness. A Frida Kahlo mural hints at the casual Mexican menu.

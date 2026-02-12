@@ -1,41 +1,44 @@
-import { ScrollArea } from "~/components/ui/scroll-area";
-import { Checkbox } from "~/components/ui/checkbox";
-import Prices from "~/features/shared/components/molecules/prices";
-import { tags } from "~/features/filter-menu/data/dummy_tags";
+import { ScrollArea } from '~/components/ui/scroll-area'
+import { Checkbox } from '~/components/ui/checkbox'
+import Prices from '~/features/shared/components/molecules/prices'
+import { tags } from '~/features/filter-menu/data/dummy_tags'
 
 export default function ReviewTags() {
   return (
     <>
       <main className="bg-white rounded-xl w-full p-7 font-lexend font-bold text-[#326F33] flex flex-col gap-5">
         <section>
-          <h1 className="uppercase underline font-climate text-3xl text-[#326F33]">
+          <h1 className="uppercase underline font-climate text-3xl text-black">
             Filters
           </h1>
         </section>
         <section className="flex flex-col gap-2">
-          <p className="text-2xl">Price Range</p>
+          <p className="text-2xl text-black">Price Range</p>
           <div className="py-1 flex gap-2">
             <Prices
               textSize="text-md"
-              unselectedColor="bg-white text-[#FFCB00] border-[#FFCB00]"
-              selectedColor="bg-[#FFCB00] text-white border-[#FFCB00]"
+              unselectedColor="bg-white text-[#416CAE] border-[#416CAE] border-2"
+              selectedColor="bg-[#416CAE] text-white border-[#416CAE]"
             />
           </div>
         </section>
         <section className="flex flex-col gap-2">
-          <p className="text-2xl">Tags</p>
-          <div className="font-inter text-[#326F33] font-semibold">
+          <p className="text-2xl text-black">Tags</p>
+          <div className="font-inter text-black font-semibold">
             <ScrollArea className="px-4 py-2 text-xl flex flex-col gap-6 h-48 scroll-left">
               {tags.map((tag) => (
-                <div key={tag.id} className="flex gap-6 items-center">
+                <div
+                  key={tag.id}
+                  className="flex gap-6 items-center text-black"
+                >
                   <Checkbox
                     id={tag.id}
                     className="
           border-2
           data-[state=unchecked]:bg-white
-          data-[state=unchecked]:border-[#FFCB00]
-          data-[state=checked]:bg-[#FFCB00]
-          data-[state=checked]:border-[#FFCB00]
+          data-[state=unchecked]:border-[#416CAE]
+          data-[state=checked]:bg-[#416CAE]
+          data-[state=checked]:border-[#416CAE]
           data-[state=checked]:text-white
         "
                   />
@@ -47,5 +50,5 @@ export default function ReviewTags() {
         </section>
       </main>
     </>
-  );
+  )
 }

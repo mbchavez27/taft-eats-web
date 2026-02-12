@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { FaRegStar, FaStar } from 'react-icons/fa'
 
-export default function Stars({ size = 32 }: { size?: number }) {
+export default function Stars({
+  size = 32,
+  color = '#FFCB00',
+}: {
+  size?: number
+  color?: string
+}) {
   const [rating, setRating] = useState<number>(0)
   const [hover, setHover] = useState<number>(0)
 
@@ -18,9 +24,9 @@ export default function Stars({ size = 32 }: { size?: number }) {
           onMouseLeave={() => setHover(0)}
         >
           {index < (hover || rating) ? (
-            <FaStar size={size} color="#416CAE" />
+            <FaStar size={size} color={color} />
           ) : (
-            <FaRegStar size={size} color="#416CAE" />
+            <FaRegStar size={size} color={color} />
           )}
         </div>
       ))}

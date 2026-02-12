@@ -23,7 +23,7 @@ export default function Prices({
           <button
             key={index}
             onClick={() => setSelected(index)}
-            className={`font-bold rounded-xl px-5 py-0.5 border-2 transition border-black ${textSize} ${
+            className={`font-bold rounded-xl px-5 py-0.5 border-2 transition ${textSize} ${
               isSelected ? selectedColor : unselectedColor
             }`}
           >
