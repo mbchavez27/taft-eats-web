@@ -13,7 +13,7 @@ export default function FoodFilter() {
     <>
       <main className="flex flex-col gap-3">
         <header>
-          <h1 className="font-climate text-xl md:text-4xl text-white">FOODS</h1>
+          <h1 className="font-climate text-xl md:text-4xl text-black">FOODS</h1>
         </header>
 
         <section>
