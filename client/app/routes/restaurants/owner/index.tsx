@@ -6,6 +6,7 @@ import { useState } from "react";
 import ReviewButton from "~/features/reviews/components/molecules/review-button";
 import EstablishmentReviews from "~/features/reviews/containers/establishment-reviews";
 import ReviewForms from "~/features/reviews/containers/review-forms";
+import ReplyForms from "~/features/reviews/containers/reply-forms.tsx";
 
 export function meta({ params }: Route.MetaArgs) {
   const restaurant_id = params.restaurant;
@@ -33,7 +34,7 @@ export default function Restaurant() {
           <EstablishmentHeader />
           {isReviewOpen ? (
             <>
-              <ReviewForms />
+              <ReplyForms />
             </>
           ) : (
             <EstablishmentReviews onReply={handleOpenReply} />
