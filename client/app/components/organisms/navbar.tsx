@@ -10,8 +10,8 @@ import Signup from "~/features/auth/containers/signup";
 import OwnerSettings from "~/features/users/containers/owner-settings";
 
 export default function NavBar() {
-  const [isAuthendicated, setAuthentication] = useState(true)
-  const [isOwner, setIsOwner] = useState(false)
+  const [isAuthendicated, setAuthentication] = useState(false);
+  const [isOwner, setIsOwner] = useState(false);
 
   return (
     <>
