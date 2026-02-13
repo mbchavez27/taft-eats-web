@@ -1,9 +1,14 @@
-import ReactionCounter from './reaction-counter'
-import ReviewContent from './review-content'
-import ReviewRating from './review-rating'
-import UserDetails from './user-details'
+import ReactionCounter from "./reaction-counter";
+import ReviewContent from "./review-content";
+import ReviewRating from "./review-rating";
+import UserDetails from "./user-details";
 
-export default function SingleReview({ is_owner }: { is_owner?: boolean }) {
+interface SingleReviewProps {
+  is_owner?: boolean;
+  onReply?: () => void;
+}
+
+export default function SingleReview({ is_owner, onReply }: SingleReviewProps) {
   return (
     <main
       className="
@@ -24,7 +29,10 @@ export default function SingleReview({ is_owner }: { is_owner?: boolean }) {
         <ReviewRating />
         {is_owner ? (
           <>
-            <button className="font-inter font-bold text-white bg-[#416CAE] text-2xl px-3 py-1 rounded-2xl">
+            <button
+              onClick={onReply}
+              className="font-inter font-bold text-white bg-[#416CAE] text-2xl px-3 py-1 rounded-2xl hover:bg-[#345a96] transition-colors"
+            >
               Reply
             </button>
           </>
@@ -35,5 +43,5 @@ export default function SingleReview({ is_owner }: { is_owner?: boolean }) {
         )}
       </div>
     </main>
-  )
+  );
 }

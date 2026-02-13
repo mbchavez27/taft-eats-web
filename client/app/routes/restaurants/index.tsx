@@ -19,6 +19,8 @@ export default function Restaurant() {
   const { restaurant } = useParams();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
 
+  const handleOpenReply = () => setIsReviewOpen(true);
+
   return (
     <>
       <main className="flex flex-col lg:flex-row py-12 px-10 lg:gap-8 gap-16">
@@ -35,7 +37,7 @@ export default function Restaurant() {
               <ReviewForms />
             </>
           ) : (
-            <EstablishmentReviews />
+            <EstablishmentReviews onReply={handleOpenReply} />
           )}
           {isReviewOpen ? (
             <>

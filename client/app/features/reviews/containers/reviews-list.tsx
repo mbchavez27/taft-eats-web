@@ -2,7 +2,7 @@ import { useLocation } from "react-router";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import SingleReview from "../components/organisms/single-review";
 
-export default function ReviewsList() {
+export default function ReviewsList({ onReply }: { onReply: () => void }) {
   const location = useLocation();
 
   return (
@@ -13,6 +13,7 @@ export default function ReviewsList() {
             <SingleReview
               key={index}
               is_owner={location.pathname?.includes("restaurants/owner")}
+              onReply={onReply}
             />
           ))}
         </div>
