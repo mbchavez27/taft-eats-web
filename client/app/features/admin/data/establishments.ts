@@ -1,0 +1,48 @@
+export const establishments = [
+  {
+    id: 1,
+    name: "El Poco Cantina",
+    cuisine: "Mexican",
+    description:
+      "With tiled walls and graffiti art, this vibrant eatery exudes playfulness. A Frida Kahlo mural hints at the casual Mexican menu. Enjoy crispy and soft flour tortilla tacos with beef barbacoa or pork carnitas, perfectly paired with a horchata featuring sweet vanilla and cinnamon notes.",
+    priceRange: "₱200-500",
+    priceSymbol: "₱₱",
+    tags: "Vegetarian-friendly",
+    location: "14.5653404, 120.9962442",
+    rating: 4.6,
+  },
+  {
+    id: 2,
+    name: "Zark's Burger",
+    cuisine: "Filipino",
+    description:
+      "Zark's Burgers is known for their fresh, huge, and great mouth-watering burgers that always bring foodies back for more.",
+    priceRange: "₱200-600",
+    priceSymbol: "₱₱",
+    tags: "Free WiFi",
+    location: "14.5653404, 120.9962442",
+    rating: 4.7,
+  },
+  {
+    id: 3,
+    name: "La Toca Taqueria",
+    cuisine: "Mexican",
+    description: "Simply just good beef.",
+    priceRange: "₱300-500",
+    priceSymbol: "₱₱₱",
+    tags: "Vegetarian-friendly",
+    location: "HX8R+XQ",
+    rating: 4.5,
+  },
+  {
+    id: 4,
+    name: "Jollibee",
+    cuisine: "Filipino",
+    description: "Sa Jollibee, bida ang saya!",
+    priceRange: "₱50-400",
+    priceSymbol: "₱",
+    tags: "Student-friendly",
+    location: "14.5653404, 120.9962442",
+    rating: 4.4,
+  },
+];
