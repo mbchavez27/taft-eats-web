@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import { AiOutlineUser } from 'react-icons/ai'
-import { Link } from 'react-router'
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar'
+import { useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
+import { Link } from "react-router";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import {
   Popover,
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-} from '~/components/ui/popover'
+} from "~/components/ui/popover";
 
 export default function UserPopover() {
-  const [isOwner, setIsOwnwer] = useState(true)
+  const [isOwner, setIsOwnwer] = useState(true);
   return (
     <>
       <Popover>
@@ -34,19 +34,19 @@ export default function UserPopover() {
             {isOwner ? (
               <>
                 <Link
-                  to={'/restaurants/owner/'}
+                  to={"/user/"}
                   className="bg-white text-black border border-black rounded-full px-3 py-2 hover:bg-black hover:text-white transition duration-100 "
                 >
-                  View Restaurant
+                  View Profile
                 </Link>
               </>
             ) : (
               <>
                 <Link
-                  to={'/user/'}
+                  to={"/restaurants/owner/"}
                   className="bg-white text-black border border-black rounded-full px-3 py-2 hover:bg-black hover:text-white transition duration-100 "
                 >
-                  View Profile
+                  View Restaurant
                 </Link>
               </>
             )}
@@ -57,5 +57,5 @@ export default function UserPopover() {
         </PopoverContent>
       </Popover>
     </>
-  )
+  );
 }
