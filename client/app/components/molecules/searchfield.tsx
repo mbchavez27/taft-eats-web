@@ -1,19 +1,19 @@
-import { useRef } from "react";
-import { IoIosSearch } from "react-icons/io";
+import { useRef } from 'react'
+import { IoIosSearch } from 'react-icons/io'
 
-export default function SearchField() {
-  const inputRef = useRef<HTMLInputElement>(null);
+export default function SearchField({ placeholder }: { placeholder?: string }) {
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSearchClick = () => {
-    inputRef.current?.focus();
-  };
+    inputRef.current?.focus()
+  }
 
   return (
-    <div className="relative w-full max-w-sm font-inter">
+    <div className="relative w-full max-w-[400px] font-inter">
       <input
         ref={inputRef}
         type="text"
-        placeholder="Search for restaurants, cuisines, and dishes"
+        placeholder={placeholder}
         className="w-full border-3 border-[#326F33] rounded-xl text-sm px-4 py-2 pr-16 focus:outline-none"
       />
       <button
@@ -23,5 +23,5 @@ export default function SearchField() {
         <IoIosSearch size={20} />
       </button>
     </div>
-  );
+  )
 }

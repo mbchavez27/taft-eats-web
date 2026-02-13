@@ -10,8 +10,8 @@ import Signup from "~/features/auth/containers/signup";
 import OwnerSettings from "~/features/users/containers/owner-settings";
 
 export default function NavBar() {
-  const [isAuthendicated, setAuthentication] = useState(true);
-  const [isOwner, setIsOwner] = useState(false);
+  const [isAuthendicated, setAuthentication] = useState(true)
+  const [isOwner, setIsOwner] = useState(false)
 
   return (
     <>
@@ -31,19 +31,21 @@ export default function NavBar() {
           </Link>
         </section>
         <SideBar />
+
         {isOwner ? (
           <>
-            <div className="hidden lg:flex items-center">
-              <SearchField />
+            <div className="hidden lg:flex items-center flex-1 justify-center max-w-xl mx-4">
+              <SearchField placeholder="Search for restaurants, cuisines, and dishes" />
             </div>
           </>
         ) : null}
+
         <section className="hidden lg:flex font-inter text-lg items-center gap-12">
-          <div className="flex gap-12">
+          <div className="flex gap-12 items-center">
             {isOwner ? null : (
               <>
-                <div className="hidden lg:flex items-center">
-                  <SearchField />
+                <div className="hidden lg:flex items-center w-md">
+                  <SearchField placeholder="Search for restaurants, cuisines, and dishes" />
                 </div>
               </>
             )}
