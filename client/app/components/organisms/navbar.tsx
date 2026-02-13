@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import { IoLocationOutline, IoHomeOutline } from 'react-icons/io5'
-import { CiBookmark } from 'react-icons/ci'
-import SearchField from '~/components/molecules/searchfield'
-import SideBar from './sidebar.'
-import { Link } from 'react-router'
-import UserPopover from './user-popover'
-import Login from '~/features/auth/containers/login'
-import Signup from '~/features/auth/containers/signup'
-import OwnerSettings from '~/features/users/containers/owner-settings'
+import { useState } from "react";
+import { IoLocationOutline, IoHomeOutline } from "react-icons/io5";
+import { CiBookmark } from "react-icons/ci";
+import SearchField from "~/components/molecules/searchfield";
+import SideBar from "./sidebar.";
+import { Link } from "react-router";
+import UserPopover from "./user-popover";
+import Login from "~/features/auth/containers/login";
+import Signup from "~/features/auth/containers/signup";
+import OwnerSettings from "~/features/users/containers/owner-settings";
 
 export default function NavBar() {
   const [isAuthendicated, setAuthentication] = useState(true)
@@ -17,7 +17,7 @@ export default function NavBar() {
     <>
       <nav className="bg-[#FFFFFF] flex items-center justify-between px-8 lg:px-16 md:py-2">
         <section>
-          <Link to={'/'} className="flex items-center gap-1">
+          <Link to={"/"} className="flex items-center gap-1">
             <img
               src="/logos/tafteats_logo.png"
               alt="logo"
@@ -75,16 +75,26 @@ export default function NavBar() {
                 <div className="flex gap-3">
                   {isAuthendicated ? (
                     <>
-                      <div className="bg-[#326F33] text-white p-2 rounded-full">
+                      {/* <div className="bg-[#326F33] text-white p-2 rounded-full">
                         <CiBookmark size={24} />
-                      </div>
+                      </div> */}
                       <UserPopover />
                     </>
                   ) : (
                     <>
                       <div className="font-medium flex ml-4 gap-5">
-                        <Login />
-                        <Signup />
+                        <Link
+                          to={"/auth/login"}
+                          className="bg-white text-black border border-black px-4 py-1 rounded-lg"
+                        >
+                          Log In
+                        </Link>
+                        <Link
+                          to={"/auth/sign-up"}
+                          className="bg-[#326F33] text-white px-3 py-1 rounded-lg"
+                        >
+                          Sign Up
+                        </Link>
                       </div>
                     </>
                   )}
@@ -95,5 +105,5 @@ export default function NavBar() {
         </section>
       </nav>
     </>
-  )
+  );
 }

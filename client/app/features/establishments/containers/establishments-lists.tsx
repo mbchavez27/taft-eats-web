@@ -6,7 +6,7 @@ export default function EstablishmentsLists() {
     <>
       <main className="flex flex-col gap-5">
         <header>
-          <h1 className="font-climate text-xl md:text-4xl text-white">
+          <h1 className="font-climate text-xl md:text-4xl text-black">
             ESTABLISHMENTS
           </h1>
         </header>

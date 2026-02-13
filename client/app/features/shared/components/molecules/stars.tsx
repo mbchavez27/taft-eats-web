@@ -1,13 +1,19 @@
-import { useState } from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { useState } from 'react'
+import { FaRegStar, FaStar } from 'react-icons/fa'
 
-export default function Stars({ size = 32 }: { size?: number }) {
-  const [rating, setRating] = useState<number>(0);
-  const [hover, setHover] = useState<number>(0);
+export default function Stars({
+  size = 32,
+  color = '#FFCB00',
+}: {
+  size?: number
+  color?: string
+}) {
+  const [rating, setRating] = useState<number>(0)
+  const [hover, setHover] = useState<number>(0)
 
   const handleClick = (index: number) => {
-    setRating(index + 1);
-  };
+    setRating(index + 1)
+  }
   return (
     <>
       {[0, 1, 2, 3, 4].map((index) => (
@@ -18,12 +24,12 @@ export default function Stars({ size = 32 }: { size?: number }) {
           onMouseLeave={() => setHover(0)}
         >
           {index < (hover || rating) ? (
-            <FaStar size={size} color="#FFD24D" />
+            <FaStar size={size} color={color} />
           ) : (
-            <FaRegStar size={size} color="#FFD24D" />
+            <FaRegStar size={size} color={color} />
           )}
         </div>
       ))}
     </>
-  );
+  )
 }

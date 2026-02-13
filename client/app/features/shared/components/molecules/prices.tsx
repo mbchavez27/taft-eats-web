@@ -1,23 +1,23 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 type PricesProps = {
-  textSize?: string;
-  selectedColor?: string; // bg + text + border for selected
-  unselectedColor?: string; // bg + text + border for unselected
-};
+  textSize?: string
+  selectedColor?: string // bg + text + border for selected
+  unselectedColor?: string // bg + text + border for unselected
+}
 
 export default function Prices({
-  textSize = "text-lg",
-  selectedColor = "bg-[#326F33] text-white border-[#326F33]",
-  unselectedColor = "bg-white text-[#326F33] border-[#326F33]",
+  textSize = 'text-lg',
+  selectedColor = 'bg-[#416CAE] text-white border-[#416CAE] text-white',
+  unselectedColor = 'bg-white text-[#326F33] border-[#416CAE] text-black',
 }: PricesProps) {
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null)
 
-  const prices = ["₱", "₱₱", "₱₱₱"];
+  const prices = ['₱', '₱₱', '₱₱₱']
   return (
     <>
       {prices.map((price, index) => {
-        const isSelected = selected === index;
+        const isSelected = selected === index
 
         return (
           <button
@@ -29,8 +29,8 @@ export default function Prices({
           >
             {price}
           </button>
-        );
+        )
       })}
     </>
-  );
+  )
 }

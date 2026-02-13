@@ -24,7 +24,7 @@ export default function SingleReview({ is_owner }: { is_owner?: boolean }) {
         <ReviewRating />
         {is_owner ? (
           <>
-            <button className="font-inter font-bold text-[#326F33] bg-[#FFCB00] text-2xl px-3 py-1 rounded-2xl">
+            <button className="font-inter font-bold text-white bg-[#416CAE] text-2xl px-3 py-1 rounded-2xl">
               Reply
             </button>
           </>

@@ -1,4 +1,4 @@
-import Stars from "~/features/shared/components/molecules/stars";
+import Stars from '~/features/shared/components/molecules/stars'
 
 export default function ReviewForms() {
   return (
@@ -26,5 +26,5 @@ export default function ReviewForms() {
         </section>
       </main>
     </>
-  );
+  )
 }

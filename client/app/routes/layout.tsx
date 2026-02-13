@@ -4,10 +4,10 @@ import NavBar from '~/components/organisms/navbar'
 export default function RootLayout() {
   return (
     <>
-      <main className="min-h-screen w-full bg-[url('/background/background.png')]">
+      <div className="min-h-screen w-full bg-[url('/background/background2.png')]">
         <NavBar />
         <Outlet />
-      </main>
+      </div>
     </>
   )
 }

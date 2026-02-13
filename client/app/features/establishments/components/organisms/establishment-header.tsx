@@ -3,7 +3,7 @@ export default function EstablishmentHeader() {
     <>
       {/* Header */}
       <header>
-        <h1 className="text-[#F9ECA8] font-climate uppercase text-3xl md:text-6xl lg:text-7xl tracking-wider">
+        <h1 className="text-black font-climate uppercase text-3xl md:text-6xl lg:text-7xl tracking-wider">
           EL POCO CANTINA
         </h1>
         <p className="font-lexend text-xl font-bold text-[#9CB16F]">

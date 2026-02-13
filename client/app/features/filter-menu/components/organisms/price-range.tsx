@@ -1,13 +1,13 @@
-import Prices from "~/features/shared/components/molecules/prices";
+import Prices from '~/features/shared/components/molecules/prices'
 
 export default function PriceRange() {
   return (
-    <section className="flex flex-col gap-2 px-8 py-2">
+    <section className="flex flex-col gap-2 px-8 py-2 text-black">
       <h1 className="font-bold text-2xl">Price Range</h1>
 
       <div className="py-1 flex gap-2">
-        <Prices />
+        <Prices selectedColor="border-black" unselectedColor="border-black" />
       </div>
     </section>
-  );
+  )
 }
